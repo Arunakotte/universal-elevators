@@ -1,0 +1,215 @@
+/**
+ * Universal Elevators - Luxury Architectural & 3D Styling System
+ * Midnight Navy, Charcoal, Brushed Platinum & Champagne Gold Accents
+ */
+
+:root {
+  --color-midnight: #080c14;
+  --color-navy: #0f172a;
+  --color-slate-card: #141e33;
+  --color-slate-border: rgba(255, 255, 255, 0.1);
+  --color-gold: #c5a059;
+  --color-gold-bright: #d4af37;
+  --color-gold-glow: rgba(212, 175, 55, 0.35);
+  --color-platinum: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --font-display: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base Body Enhancements */
+body {
+  background-color: var(--color-midnight);
+  color: var(--color-platinum);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Architectural Grid Background */
+.bg-architectural-grid {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.15) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Champagne Gold Metallic Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fce8a6 0%, #d4af37 50%, #aa7c11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #b8932b 50%, #99781d 100%);
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Glassmorphism Cards */
+.luxury-card {
+  background: rgba(18, 27, 46, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* 3D Perspective Card Tilt Container */
+.card-3d-wrap {
+  perspective: 1200px;
+}
+
+.card-3d-inner {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Category Card Zoom & Overlays */
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card .card-img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.category-card:hover .card-img {
+  transform: scale(1.07);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Sticky Header Scroll Transition */
+.site-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  background-color: rgba(8, 12, 20, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Elevator 3D Hero Wrapper */
+.hero-elevator-container {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 30%, #17243c 0%, #0d1527 60%, #060911 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(30, 58, 138, 0.2);
+  position: relative;
+}
+
+/* Horizontal Timeline Track */
+.timeline-track-step {
+  position: relative;
+}
+
+.timeline-track-step::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.6), rgba(255, 255, 255, 0.1));
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .timeline-track-step::after {
+    display: none;
+  }
+}
+
+/* Gallery Filter Active Pill */
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #d4af37, #b8932b);
+  color: #080c14;
+  font-weight: 700;
+  border-color: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Modal Lightbox Styles */
+.modal-backdrop-blur {
+  background: rgba(4, 7, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080c14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Accessibility: Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .category-card:hover {
+    transform: none !important;
+  }
+  .card-3d-inner {
+    transform: none !important;
+  }
+}
